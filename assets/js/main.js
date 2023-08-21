@@ -6,7 +6,7 @@ function getNameAndPrice(data) {
     const cartItems = document.getElementById("cart-items");
     const li = document.createElement("li");
     li.classList.add("list-decimal");
-    li.innerText = `${itemName}`;
+    li.innerText = itemName;
     cartItems.appendChild(li);
 
     const purchaseBtn = document.getElementById("purchase-btn");
@@ -24,15 +24,10 @@ function getNameAndPrice(data) {
 }
 
 function applyCoupon() {
-    const couponInput = document.getElementById("coupon-input").value;
+    let couponInput = document.getElementById("coupon-input");
     const couponCode = 'SELL200';
 
-    if (couponInput == '') {
-        alert("Please enter coupon code");
-        return;
-    }
-
-    if (couponInput == couponCode) {
+    if (couponInput.value == couponCode) {
         const discountPriceField = document.getElementById("discount-price");
         const totalPriceField = document.getElementById("total-price");
 
@@ -44,6 +39,7 @@ function applyCoupon() {
         finalPriceField.innerText = finalPrice.toFixed(2);
     } else {
         alert("Invalid Coupon Code, use 'SELL200' correctly");
+        couponInput.value = '';
     }
 
 }
