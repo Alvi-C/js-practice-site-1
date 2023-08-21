@@ -55,7 +55,7 @@
                 <h2 class="text-4xl font-semibold mb-8">Kitchenware</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <!-- Product card -->
-                    <div class="card bg-base-100 shadow-xl">
+                    <div onclick="getNameAndPrice(this)" class="card bg-base-100 shadow-xl">
                         <figure class="px-10 pt-10 bg-gray-100 m-3">
                             <img src="./assets/images/prod1.png" alt="prod4" class="rounded-xl" />
                         </figure>
@@ -68,13 +68,13 @@
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                             </div>
-                            <h2 class="card-title">K. Accessories</h2>
-                            <p class="text-gray-400">39.00 TK</p>
+                            <h2 class="card-title">Wooden Spoon</h2>
+                            <p class="text-gray-400"><span>39.00</span> TK</p>
                         </div>
                     </div>
 
                     <!-- Product card -->
-                    <div class="card bg-base-100 shadow-xl">
+                    <div onclick="getNameAndPrice(this)" class="card bg-base-100 shadow-xl">
                         <figure class="px-10 pt-10 bg-gray-100 m-3">
                             <img src="./assets/images/prod2.png" alt="prod4" class="rounded-xl" />
                         </figure>
@@ -87,13 +87,13 @@
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                             </div>
-                            <h2 class="card-title">K. Accessories</h2>
-                            <p class="text-gray-400">25.00 TK</p>
+                            <h2 class="card-title">Chopping Board</h2>
+                            <p class="text-gray-400"><span>25.00</span> TK</p>
                         </div>
                     </div>
 
                     <!-- Product card -->
-                    <div class="card bg-base-100 shadow-xl">
+                    <div onclick="getNameAndPrice(this)" class="card bg-base-100 shadow-xl">
                         <figure class="px-10 pt-10 bg-gray-100 m-3">
                             <img src="./assets/images/prod3.png" alt="prod4" class="rounded-xl" />
                         </figure>
@@ -107,7 +107,7 @@
                                 <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                             </div>
                             <h2 class="card-title">Home Cooker</h2>
-                            <p class="text-gray-400">49.00 TK</p>
+                            <p class="text-gray-400"><span>49.00</span> TK</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,8 @@
                     <div class="flex justify-center">
                         <input id="coupon-input" class="border border-gray-200 px-5 py-3 rounded-l-md" type="text"
                             placeholder="coupon code" />
-                        <button id="btn-apply" disabled class="bg-[#E527B2] px-5 py-3 text-white rounded-r-md">
+                        <button onclick="applyCoupon()" id="coupon-apply-btn" disabled
+                            class="bg-[#E527B2] px-5 py-3 text-white rounded-r-md">
                             Apply
                         </button>
                     </div>
@@ -128,41 +129,41 @@
 
                 <div class="bg-white px-12 py-6 mt-3">
                     <!-- Cart -->
-                    <div id="cart-items"></div>
+                    <div id="cart-items" class="flex flex-col gap-2 font-worksans font-semibold"></div>
                     <hr />
 
                     <!-- Calculation -->
                     <p class="mt-4">
-                        <span class="font-bold">Total price:</span>
+                        <span class="font-semibold">Total price:</span>
                         <span class="text-gray-400"><span id="total-price">00</span> TK</span>
                     </p>
                     <p class="my-2">
-                        <span class="font-bold">Discount:</span>
+                        <span class="font-semibold">Discount:</span>
                         <span class="text-gray-400"><span id="discount-price">00</span> TK</span>
                     </p>
                     <p class="mb-4">
-                        <span class="font-bold">Total:</span>
+                        <span class="font-semibold">Total:</span>
                         <span class="text-gray-400"><span id="final-price">00</span> TK</span>
                     </p>
                     <hr />
-                    <button id="btn-make-purchase" class="bg-[#E527B2] px-5 py-3 text-white rounded-md mt-5 w-full"
-                        disabled onclick="my_modal_5.showModal()">
+                    <button id="purchase-btn" class="bg-[#E527B2] px-5 py-3 text-white rounded-md mt-5 w-full" disabled
+                        onclick="my_modal_5.showModal()">
                         Make Purchase
                     </button>
 
                     <!-- Modal -->
                     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                         <form method="dialog" class="modal-box">
-                            <img class="mx-auto mt-3 md:mt-10" src="images/congo.png" alt="" />
+                            <img class="mx-auto mt-3 md:mt-10" src="./assets/images/congo.png" alt="" />
                             <h3 class="font-bold text-5xl text-center mt-14">
                                 Congratulations
                             </h3>
                             <p class="py-4 text-center text-gray-400">
-                                Your Purchase the product
+                                You've Purchased the product
                             </p>
 
                             <div class="modal-action text-center mx-auto w-1/5 mb-3 md:mb-14">
-                                <button id="modal-btn" class="btn bg-[#E527B2]">
+                                <button onclick="goHome()" class="btn bg-[#E527B2] text-white">
                                     Go Home
                                 </button>
                             </div>
