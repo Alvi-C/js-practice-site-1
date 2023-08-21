@@ -22,8 +22,156 @@
 </head>
 
 <body>
+    <header class="w-full bg-[#F9F6E2]">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="pt-14 pb-10 w-[80%] text-center text-black font-worksans">
+                    <div class="">
+                        <h4 class="text-2xl font-normal mb-11">
+                            ---SALE FEVER---
+                        </h4>
+                        <h1 class="text-4xl md:text-6xl font-bold mx-auto mb-11 md:mb-16">
+                            Purchase TK 200 or above & get
+                            <span class="text-[#E527B2]">20% off</span>
+                        </h1>
+                        <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+                            <span class="text-2xl font-normal mr-4">Use Promo Code</span>
+                            <span class="px-5 py-3 bg-[#E527B2] rounded-md text-white">SELL200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-16">
+                    <img src="./assets/images/Summer1.png" alt="" />
+                </div>
+            </div>
+        </div>
 
-    <h1 class="font-worksans text-5xl">Summer Sale</h1>
+    </header>
+    <main class="w-full px-4 md:px-8 lg:px-12 py-12 bg-[#F8F8F8]">
+
+        <div class="flex flex-col lg:flex-row gap-11">
+            <!-- Kitchenware Section -->
+            <div class="">
+                <h2 class="text-4xl font-semibold mb-8">Kitchenware</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Product card -->
+                    <div class="card bg-base-100 shadow-xl">
+                        <figure class="px-10 pt-10 bg-gray-100 m-3">
+                            <img src="./assets/images/prod1.png" alt="prod4" class="rounded-xl" />
+                        </figure>
+
+                        <div class="card-body items-center text-center">
+                            <div class="rating rating-sm mx-auto">
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <h2 class="card-title">K. Accessories</h2>
+                            <p class="text-gray-400">39.00 TK</p>
+                        </div>
+                    </div>
+
+                    <!-- Product card -->
+                    <div class="card bg-base-100 shadow-xl">
+                        <figure class="px-10 pt-10 bg-gray-100 m-3">
+                            <img src="./assets/images/prod2.png" alt="prod4" class="rounded-xl" />
+                        </figure>
+
+                        <div class="card-body items-center text-center">
+                            <div class="rating rating-sm mx-auto">
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <h2 class="card-title">K. Accessories</h2>
+                            <p class="text-gray-400">25.00 TK</p>
+                        </div>
+                    </div>
+
+                    <!-- Product card -->
+                    <div class="card bg-base-100 shadow-xl">
+                        <figure class="px-10 pt-10 bg-gray-100 m-3">
+                            <img src="./assets/images/prod3.png" alt="prod4" class="rounded-xl" />
+                        </figure>
+
+                        <div class="card-body items-center text-center">
+                            <div class="rating rating-sm mx-auto">
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <h2 class="card-title">Home Cooker</h2>
+                            <p class="text-gray-400">49.00 TK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kitchenware section end -->
+            <div class="w-[380px] font-worksans mt-16">
+                <!-- Coupon input -->
+                <div class="bg-white py-6 rounded-md">
+                    <h2 class="font-semibold py-3 px-11">Have coupon?</h2>
+                    <div class="flex justify-center">
+                        <input id="coupon-input" class="border border-gray-200 px-5 py-3 rounded-l-md" type="text"
+                            placeholder="coupon code" />
+                        <button id="btn-apply" disabled class="bg-[#E527B2] px-5 py-3 text-white rounded-r-md">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white px-12 py-6 mt-3">
+                    <!-- Cart -->
+                    <div id="cart-items"></div>
+                    <hr />
+
+                    <!-- Calculation -->
+                    <p class="mt-4">
+                        <span class="font-bold">Total price:</span>
+                        <span class="text-gray-400"><span id="total-price">00</span> TK</span>
+                    </p>
+                    <p class="my-2">
+                        <span class="font-bold">Discount:</span>
+                        <span class="text-gray-400"><span id="discount-price">00</span> TK</span>
+                    </p>
+                    <p class="mb-4">
+                        <span class="font-bold">Total:</span>
+                        <span class="text-gray-400"><span id="final-price">00</span> TK</span>
+                    </p>
+                    <hr />
+                    <button id="btn-make-purchase" class="bg-[#E527B2] px-5 py-3 text-white rounded-md mt-5 w-full"
+                        disabled onclick="my_modal_5.showModal()">
+                        Make Purchase
+                    </button>
+
+                    <!-- Modal -->
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <form method="dialog" class="modal-box">
+                            <img class="mx-auto mt-3 md:mt-10" src="images/congo.png" alt="" />
+                            <h3 class="font-bold text-5xl text-center mt-14">
+                                Congratulations
+                            </h3>
+                            <p class="py-4 text-center text-gray-400">
+                                Your Purchase the product
+                            </p>
+
+                            <div class="modal-action text-center mx-auto w-1/5 mb-3 md:mb-14">
+                                <button id="modal-btn" class="btn bg-[#E527B2]">
+                                    Go Home
+                                </button>
+                            </div>
+                        </form>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
     <script src="./assets/js/main.js"></script>
