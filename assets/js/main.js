@@ -11,8 +11,6 @@ function getNameAndPrice(data) {
 
     const purchaseBtn = document.getElementById("purchase-btn");
     purchaseBtn.disabled = false;
-    const couponApplyBtn = document.getElementById("coupon-apply-btn");
-    couponApplyBtn.disabled = false;
 
     const totalPriceField = document.getElementById("total-price");
     const totalPrice = parseInt(totalPriceField.innerText) + parseInt(itemPrice);
@@ -21,6 +19,10 @@ function getNameAndPrice(data) {
     const finalPriceField = document.getElementById("final-price");
     finalPriceField.innerText = totalPrice.toFixed(2);
 
+    if (totalPrice >= 200) {
+        const couponApplyBtn = document.getElementById("coupon-apply-btn");
+        couponApplyBtn.disabled = false;
+    }
 }
 
 function applyCoupon() {
@@ -38,10 +40,8 @@ function applyCoupon() {
         const finalPrice = parseInt(totalPriceField.innerText) - discountPrice;
         finalPriceField.innerText = finalPrice.toFixed(2);
     } else {
-        alert("Invalid Coupon Code, use 'SELL200' correctly");
-        couponInput.value = '';
+        alert("Invalid coupon code, please try with 'SELL200'");
     }
-
 }
 
 function goHome() {
